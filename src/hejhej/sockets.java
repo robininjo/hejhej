@@ -19,7 +19,7 @@ import java.net.Socket;
 public class sockets {
 
     public sockets(String ip) {
-        String serverName = "Name";
+        String serverName = ip;
         System.out.println("Hej");
         int port = 8080;
         try{

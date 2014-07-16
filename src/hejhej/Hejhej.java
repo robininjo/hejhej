@@ -24,7 +24,14 @@ public class Hejhej {
         if(status){
             sockets sock = new sockets(ip);
         }else{
-            GreetingServer serv = new GreetingServer();
+            try{
+         Thread t = new GreetingServer();
+         t.start();
+      }catch(IOException e)
+      {
+         e.printStackTrace();
+      }
+            //GreetingServer serv = new GreetingServer();
         }
         
         System.out.println("Hejsan");
