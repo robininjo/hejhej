@@ -7,6 +7,7 @@
 package hejhej;
 
 import java.io.IOException;
+import java.net.InetAddress;
 
 /**
  *
@@ -18,9 +19,10 @@ public class Hejhej {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
+        String ip = InetAddress.getLocalHost().getHostAddress();
         boolean status = true;
         if(status){
-            sockets sock = new sockets();
+            sockets sock = new sockets(ip);
         }else{
             GreetingServer serv = new GreetingServer();
         }

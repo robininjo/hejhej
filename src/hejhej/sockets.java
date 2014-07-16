@@ -10,7 +10,6 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
@@ -19,14 +18,14 @@ import java.net.Socket;
  */
 public class sockets {
 
-    public sockets() {
+    public sockets(String ip) {
         String serverName = "Name";
         System.out.println("Hej");
         int port = 8080;
         try{
             System.out.println("Connecting to " + serverName
                              + " on port " + port);
-            Socket client = new Socket(serverName, port);
+            Socket client = new Socket(ip, port);
             System.out.println("Just connected to "
                       + client.getRemoteSocketAddress());
             OutputStream outToServer = client.getOutputStream();

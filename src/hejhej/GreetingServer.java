@@ -10,7 +10,7 @@ public class GreetingServer extends Thread
    public GreetingServer() throws IOException
    {
       serverSocket = new ServerSocket(8080);
-      serverSocket.setSoTimeout(10000);
+      serverSocket.setSoTimeout(100000);
    }
 
    public void run()
