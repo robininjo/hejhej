@@ -17,7 +17,7 @@ import java.net.Socket;
  * @author robin
  */
 public class sockets {
-
+    public DataOutputStream out;
     public sockets(String ip) {
         String serverName = ip;
         System.out.println("Hej");
@@ -25,12 +25,11 @@ public class sockets {
         try{
             System.out.println("Connecting to " + serverName
                              + " on port " + port);
-            Socket client = new Socket(ip, port);
+            Socket client = new Socket("10.0.1.9", port);
             System.out.println("Just connected to "
                       + client.getRemoteSocketAddress());
             OutputStream outToServer = client.getOutputStream();
-            DataOutputStream out =
-                       new DataOutputStream(outToServer);
+            out = new DataOutputStream(outToServer);
 
          out.writeUTF("Hello from "
                       + client.getLocalSocketAddress());
@@ -38,7 +37,7 @@ public class sockets {
          DataInputStream in =
                         new DataInputStream(inFromServer);
          System.out.println("Server says " + in.readUTF());
-         client.close();
+         //client.close();
       }catch(IOException e)
       {
          e.printStackTrace();

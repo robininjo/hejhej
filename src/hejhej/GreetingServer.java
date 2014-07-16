@@ -12,7 +12,10 @@ public class GreetingServer extends Thread
       serverSocket = new ServerSocket(8080);
       serverSocket.setSoTimeout(100000);
    }
-
+   public String namn(String namn){
+       String name = namn;
+       return namn;
+   }
    public void run()
    {
       while(true)
@@ -31,7 +34,7 @@ public class GreetingServer extends Thread
                  new DataOutputStream(server.getOutputStream());
             out.writeUTF("Thank you for connecting to "
               + server.getLocalSocketAddress() + "\nGoodbye!");
-            server.close();
+            //server.close();
          }catch(SocketTimeoutException s)
          {
             System.out.println("Socket timed out!");

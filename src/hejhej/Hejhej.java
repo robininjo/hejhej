@@ -20,9 +20,11 @@ public class Hejhej {
      */
     public static void main(String[] args) throws IOException {
         String ip = InetAddress.getLocalHost().getHostAddress();
+        String namn = "Hej jag heter Robin";
         boolean status = true;
         if(status){
             sockets sock = new sockets(ip);
+            sock.out.writeUTF(namn);
         }else{
             try{
          Thread t = new GreetingServer();
